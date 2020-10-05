@@ -154,6 +154,7 @@ $(DYNAMIC): $(OBJS:.o=.so)
 	ln -sf $(DYNAMIC) libiw.so
 
 romfs:
+	$(ROMFSINST) /bin/iwconfig
 	$(ROMFSINST) /bin/iwpriv
 ifndef BUILD_STATIC
 	$(ROMFSINST) -S /lib/$(DYNAMIC)
